@@ -9,7 +9,7 @@ describe('TodoForm', () => {
   it('is button and input exist', () => {
     render(<TodoForm />);
     const addButton = screen.getByTestId('addButton');
-    const addInput = screen.getByPlaceholderText('add your todo');
+    const addInput = screen.getByPlaceholderText('what you want to do');
 
     expect(addInput).toHaveTextContent('');
     expect(addButton).toHaveTextContent('add');
@@ -17,7 +17,7 @@ describe('TodoForm', () => {
 
   it('change input state', () => {
     render(<TodoForm />);
-    const addInput = screen.getByPlaceholderText('add your todo');
+    const addInput = screen.getByPlaceholderText('what you want to do');
 
     userEvent.type(addInput, 'e2e test 하기');
     expect(addInput).toHaveValue('e2e test 하기');
